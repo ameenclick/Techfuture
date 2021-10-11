@@ -33,7 +33,7 @@ class Subdomain extends React.Component {
                 domain += this.state.domain[i]
             }
         }
-        let url = "http://127.0.0.1:5000/"+domain
+        let url = "https://tech-futures-backend.herokuapp.com/"+domain
         fetch(url)
         .then(res => res.json())
         .then(
