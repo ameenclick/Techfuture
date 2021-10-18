@@ -1,0 +1,5 @@
+#Ignore Bubble Char graphs
+BubbleChart.js
+
+#Ignore Line Graphs
+LineGraph.js

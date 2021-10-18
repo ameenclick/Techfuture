@@ -2,9 +2,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { AppContext } from "./libs/ContextLib";
-import ApexChart from './Apexchart'
-import Bubble from './BubbleChart';
-import LandingPage from './LandingPage';
+import Bubble from './componenets/BubbleChart';
+import LandingPage from './componenets/LandingPage';
 
 function App() {
   // const [landing, setLandingStatus] = useState(true)
