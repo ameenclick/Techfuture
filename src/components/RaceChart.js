@@ -41,17 +41,24 @@ export default class RaceChart extends Component{
     render(){
       return(
         <div>
-            <div className="row">
-                <ChartRace
-                    data={this.state.data}
-                    backgroundColor='white'
-                    width={760}
-                    padding={12}
-                    itemHeight={58}
-                    gap={12}
-                    titleStyle={{ font: 'normal 400 13px Arial', color: '#000' }}
-                    valueStyle={{ font: 'normal 400 11px Arial', color: '#000' }}
-                />
+            <div>
+              {this.state.data.length ==0 ?
+              <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading chart...</span>
+            </div>
+              :
+              <ChartRace
+              data={this.state.data}
+              backgroundColor='white'
+              width={760}
+              padding={12}
+              itemHeight={58}
+              gap={12}
+              titleStyle={{ font: 'normal 400 13px Arial', color: '#000' }}
+              valueStyle={{ font: 'normal 400 11px Arial', color: '#000' }}
+            />
+              }
+                
           </div>
         </div>
       );

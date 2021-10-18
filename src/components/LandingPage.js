@@ -40,7 +40,6 @@ function LandingPage(){
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result["data"])
                     setDomainaccelaration(result["data"])
                 },
                 (error) =>{
@@ -93,9 +92,6 @@ function LandingPage(){
             <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#"><b>TechFuture</b></a>
-                    {/* <form className="d-flex">
-                     <button className="btn btn-outline-primary" onClick={(e)=>{e.preventDefault(); setAccelaratation(!yearlyAccelaration);}}>{yearlyAccelaration? "Explore More":"Yearly Accelartion"}</button>     
-                    </form> */}
                 </div>
             </nav>
             <div className="container">
@@ -125,12 +121,12 @@ function LandingPage(){
                 </li>
             </ul>
             }
-            <div className="row" id="visualisation" align="center">
+            <div className="row mb-2" id="visualisation">
                     {// Trend Graph
                     }
             {(isLoaded)?
             (yearlyAccelaration)?
-                <div className="col" style={{ overflowY: "scroll", height:size[1], width: size[0]}}>
+                <div className="col align-self-center" style={{ overflowY: "scroll", height:size[1], width: size[0]}}>
                     <div className="sticky-top float-end"  id="years"></div>
                     <RaceChart data={domainAccelaration} />
                 </div>
@@ -141,7 +137,7 @@ function LandingPage(){
                  size={size}
                  words={words}
                  />:
-                <div className="row justify-content-center">
+                <div className="col align-self-center" style={{ overflowY: "hidden", height:size[1], width: size[0]}}>
                     <div class="spinner-border" role="status" align="center">
                         <span class="visually-hidden">Loading chart...</span>
                     </div>
@@ -168,14 +164,14 @@ function LandingPage(){
                 </div>
             </div>
             {
-            !yearlyAccelaration? "" :
-             <div className="row">
-                <div className="col" align="center">
-                    <div className="col">
-                        <button type="button" class="btn btn-lg btn-primary" onClick={(e)=>{e.preventDefault(); setAccelaratation(!yearlyAccelaration);}}>Explore</button>
-                    </div>
-                </div>
-            </div>
+            // !yearlyAccelaration? "" :
+            //  <div className="row">
+            //     <div className="col" align="center">
+            //         <div className="col">
+            //             <button type="button" class="btn btn-lg btn-primary" onClick={(e)=>{e.preventDefault(); setAccelaratation(!yearlyAccelaration);}}>Explore</button>
+            //         </div>
+            //     </div>
+            // </div>
             }
             <div className="row">
                 <div className="col fixed-bottom" align="center">
