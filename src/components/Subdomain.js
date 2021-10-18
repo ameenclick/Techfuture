@@ -15,7 +15,9 @@ class Subdomain extends React.Component {
         suggestions : [],
         publications: 0,
         patents : 0,
-        search: ""
+        search: "",
+        height: 400,
+        width: (window.innerWidth >= 1000)? 1000: window.innerWidth
       }
       this.getDetails = this.getDetails.bind(this)
     }
@@ -149,7 +151,7 @@ class Subdomain extends React.Component {
                   {this.state.graphData.length === 0 ? <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
                   </div> : 
-                    <div>
+                    <div >
                         <div class="border border-dark rounded" id="tree" style={{ width: 'auto', height: '25em' }}>
                         <div className="overflow-visible">
                             <div className="float-end"  id="hovered"></div>
@@ -163,6 +165,7 @@ class Subdomain extends React.Component {
                         
                         <div id="node-details"></div>
                         </div>
+                        <div style={{ overflowX: "scroll"}}>
                         <Chart
                           width={1000}
                           height={500}
@@ -180,6 +183,7 @@ class Subdomain extends React.Component {
                             bubble: { textStyle: { fontSize: 11 } },
                           }}
                         />
+                        </div>
                     </div>}
             </div>
             <div className="row justify-content-center">
