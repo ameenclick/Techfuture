@@ -155,7 +155,7 @@ class Subdomain extends React.Component {
                             <div className="float-end"  id="hovered"></div>
                         </div>
                         <Tree initialDepth={0} 
-                              orientation={"vertical"}
+                              orientation={"horizontal"}
                               // depthFactor={250} 
                               // nodeSize = {{"x": 200, "y": 200}}
                               onNodeMouseOver = {(node,e) =>{this.showNodeData(node,e)}} 
